@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Chủ tịch Hồ Chí Minh — Trang thông tin tổng hợp</title>
+<meta name="description" content="Tiểu sử, tác phẩm, câu nói, tư tưởng và bài học từ Chủ tịch Hồ Chí Minh. Nội dung chuẩn, hình ảnh có nguồn." />
+<style>
+  /* ========== Primary palette (from user's palette) ========== */
+  :root{
+    --bg: #F4F1DE;       /* page background */
+    --panel: #E0CBA8;    /* card / panel background */
+    --accent: #9D0208;   /* primary accent / red */
+    --accent-dark: #6A040F; /* darker red */
+    --muted: #3b3b3b;
+    --white: #ffffff;
+    --gold:#FFD166;
+    --max-width: 1100px;
+  }
+  /* ===== Reset & base ===== */
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+  /* ===== Navbar ===== */
+  header.site-header{background:linear-gradient(90deg,var(--accent) 0%, var(--accent-dark) 100%);color:var(--white);position:sticky;top:0;z-index:60;box-shadow:0 6px 18px rgba(106,4,15,0.12)}
+  .nav-inner{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:14px 20px;max-width:var(--max-width);margin:0 auto}
+  .brand {display:flex;gap:12px;align-items:center;font-weight:700}
+  .brand img{width:42px;height:42px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,.12)}
+  .brand h1{font-size:18px;margin:0}
+  nav.main-nav{display:flex;gap:10px;align-items:center}
+  nav.main-nav button{background:transparent;border:none;color:var(--white);padding:8px 12px;border-radius:8px;font-weight:600;cursor:pointer;transition:transform .18s, background .18s}
+  nav.main-nav button:hover{transform:translateY(-3px);background:rgba(255,255,255,0.06)}
+  nav.main-nav button.active{background:var(--white);color:var(--accent);box-shadow:0 6px 14px rgba(0,0,0,0.08)}
+  .nav-right{display:flex;gap:10px;align-items:center}
+  .small-tag{background:rgba(255,255,255,0.08);padding:6px 10px;border-radius:999px;font-size:13px;color:#fff}
+  /* ===== HERO / HOME ===== */
+  .hero{
+    padding:48px 20px;
+    display:grid;
+    grid-template-columns:1fr 380px;
+    gap:28px;
+    align-items:center;
+  }
+  .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(20,20,20,0.06)}
+  .hero h2{margin:0 0 12px;color:var(--accent);}
+  .hero p.lead{margin:0 0 18px;color:#374151;line-height:1.6}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{border-radius:12px;padding:10px 14px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;background:var(--white);font-weight:700}
+  .btn.primary{background:var(--accent);color:var(--white);border-color:var(--accent-dark)}
+  .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+  .portrait{width:600px;height:320px;border-radius:18px;overflow:hidden;border:10px solid rgba(255,255,255,0.82);box-shadow:0 24px 60px rgba(15,15,15,0.12);background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(224,203,168,0.14))}
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+  /* watermark lotus */
+  .lotus-watermark{position:absolute;left:-40px;bottom:-40px;opacity:.12;transform:scale(1.1);filter:blur(.2px)}
+  /* upload overlay */
+  .img-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
+  input[type=file]{display:none}
+  label.upload{background:rgba(255,255,255,0.92);padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted);cursor:pointer;border:1px solid rgba(0,0,0,0.04)}
+  /* ===== Tabs content area ===== */
+  .panel{display:none;animation:fadeUp .45s ease both}
+  .panel.active{display:block}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  section.content{padding:28px 0}
+  h3.section-title{display:flex;align-items:center;gap:12px;margin:8px 0 18px}
+  .section-title .marker{width:14px;height:14px;border-radius:50%;background:var(--panel);box-shadow:0 0 0 4px rgba(224,203,168,0.28)}
+  .card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 8px 30px rgba(20,20,20,0.04);margin-bottom:16px}
+  .grid-2{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:900px){.hero{grid-template-columns:1fr 420px}.grid-2{grid-template-columns:1fr 1fr}}
+  .muted{color:#475569}
+  .meta{font-size:13px;color:#374151}
+  /* ===== TIMELINE (detailed) ===== */
+  .timeline{position:relative;padding-left:36px}
+  .timeline::before{content:'';position:absolute;left:12px;top:6px;bottom:6px;width:4px;background:linear-gradient(180deg,var(--accent),var(--accent-dark));border-radius:6px}
+  .tl-item{position:relative;margin-bottom:30px;display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start}
+  .tl-bubble{width:56px;height:56px;border-radius:12px;background:var(--white);display:flex;align-items:center;justify-content:center;border:3px solid var(--panel);box-shadow:0 10px 20px rgba(0,0,0,0.06)}
+  .tl-bubble img{width:46px;height:46px;object-fit:cover;border-radius:8px}
+  .tl-body{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(224,203,168,0.06));padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+  .tl-year{font-weight:800;color:var(--accent)}
+  .quote{font-style:italic;color:#0f172a;margin:10px 0;background:rgba(255,255,255,0.8);padding:10px;border-radius:10px;border-left:4px solid var(--gold)}
+  /* ===== QUOTES GRID ===== */
+  .quotes-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:900px){.quotes-grid{grid-template-columns:repeat(3,1fr)}}
+  .quote-card{background:var(--white);border-radius:12px;padding:14px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+  .quote-card p{margin:0 0 8px;font-weight:700}
+  .quote-card .src{font-size:13px;color:#475569}
+  /* ===== LESSONS ===== */
+  .lessons{display:grid;gap:12px}
+  @media(min-width:900px){.lessons{grid-template-columns:repeat(2,1fr)}}
+  .lesson-item{background:var(--panel);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+  .lesson-item h4{margin:0 0 8px;color:var(--accent)}
+  .lesson-item p{margin:0;color:#334155}
+  /* ===== Gallery ===== */
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(min-width:900px){.gallery{grid-template-columns:repeat(4,1fr)}}
+  .gallery figure{background:var(--white);border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
+  .gallery figcaption{padding:8px;font-size:13px;color:#475569}
+  /* ===== Footer ===== */
+  footer.site-footer{background:var(--accent-dark);color:var(--white);padding:22px 20px;margin-top:18px}
+  .footer-grid{display:grid;gap:12px}
+  @media(min-width:900px){.footer-grid{grid-template-columns:1fr 320px}}
+  .member-input{display:flex;flex-direction:column;gap:8px}
+  .member-input input,.member-input textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);color:var(--white)}
+  .member-input button{padding:10px 14px;border-radius:10px;border:none;background:var(--gold);color:#222;font-weight:700;cursor:pointer}
+  .sources{font-size:13px;color:rgba(255,255,255,0.9)}
+  /* small helpers */
+  .muted-sm{font-size:13px;color:#475569}
+  .kicker{font-size:13px;color:var(--accent-dark);font-weight:700}
+  .pill{display:inline-block;background:var(--white);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700}
+  /* responsive adjustments */
+  @media(max-width:780px){
+    .hero{grid-template-columns:1fr;gap:16px}
+    .hero-visual{order:-1}
+    nav.main-nav{overflow:auto;padding:8px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="nav-inner">
+    <div class="brand" title="Trang thông tin Chủ tịch Hồ Chí Minh">
+      <!-- portrait source: Wikimedia Commons (public domain) -->
+      <img id="brandPortrait" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Ho_Chi_Minh_1946_portrait.jpg" alt="Chủ tịch Hồ Chí Minh" />
+      <div>
+        <h1>Chủ tịch Hồ Chí Minh</h1>
+        <div class="white-sm">Tiểu sử • Tác phẩm • Tư tưởng • Bài học</div>
+      </div>
+    </div>
+
+    <nav class="main-nav" role="navigation" aria-label="Điều hướng chính">
+      <button class="tab-btn active" data-target="home">Trang chủ</button>
+      <button class="tab-btn" data-target="tieusu">Tiểu sử</button>
+      <button class="tab-btn" data-target="tacpham">Tác phẩm</button>
+      <button class="tab-btn" data-target="caunoi">Câu nói & Thông điệp</button>
+      <button class="tab-btn" data-target="baihoc">Bài học</button>
+    </nav>
+
+    <div class="nav-right">
+      <div class="small-tag">Màu: ●</div>
+    </div>
+  </div>
+</header>
+
+<main class="container" role="main">
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="panel active">
+    <div class="hero">
+      <div class="hero-card" aria-labelledby="homeTitle">
+        <div class="kicker">Chào mừng</div>
+        <h2 id="homeTitle">Chủ tịch Hồ Chí Minh — Người của dân, vì dân</h2>
+        <p class="lead">Chủ tịch Hồ Chí Minh (Nguyễn Sinh Cung, 19/5/1890 – 2/9/1969) là người sáng lập, lãnh đạo cách mạng Việt Nam, đã cống hiến trọn đời cho độc lập dân tộc và hạnh phúc của nhân dân. Trang này tổng hợp tiểu sử, tác phẩm, câu nói, tư tưởng và bài học của Người — nội dung chuẩn xác, hình ảnh có nguồn rõ ràng.</p>
+
+        <div class="actions">
+          <button class="btn primary" data-target="tieusu">Khám phá Tiểu sử</button>
+          <button class="btn" data-target="tacpham">Xem Tác phẩm tiêu biểu</button>
+        </div>
+
+        <div style="margin-top:18px" class="muted-sm">Ảnh, trích dẫn và nội dung tham khảo: <strong>Hồ Chí Minh Toàn tập</strong>, <strong>Bảo tàng Hồ Chí Minh</strong>, <strong>Cổng thông tin Chính phủ</strong>.</div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="portrait" id="portraitWrap">
+          <!-- Default portrait from Wikimedia Commons (public domain) -->
+          <img id="portraitImg" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Ho_Chi_Minh_1946_portrait.jpg" alt="Chân dung Chủ tịch Hồ Chí Minh (1946)" />
+        </div>
+
+        <!-- lotus watermark SVG -->
+        <svg class="lotus-watermark" width="220" height="220" viewBox="0 0 200 200" aria-hidden="true">
+          <path d="M100 12c22 46 52 68 92 78-18 34-46 54-92 60-46-6-74-26-92-60 40-10 70-32 92-78z" fill="#E0CBA8"/>
+          <path d="M100 48c12 28 36 42 66 48-12 24-36 36-66 40-30-4-54-16-66-40 30-6 54-20 66-48z" fill="#E0CBA8" opacity="0.9"/>
+        </svg>
+
+        <div class="img-actions">
+          <label class="upload" title="Upload ảnh chân dung">
+            <input type="file" accept="image/*" id="uploadPortrait">Upload
+          </label>
+          <label class="upload" title="Reset về ảnh mặc định" id="resetPortrait">Reset
+          </label>
+        </div>
+        <div class="white-sm" style="text-align:center;margin-top:8px">Nguồn ảnh chân dung: Wikimedia Commons (Public Domain) — 1946</div>
+      </div>
+    </div>
+
+    <!-- quick gallery -->
+    <div style="margin-top:20px" class="card">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <div style="flex:1">
+          <strong>Hình nền hoa sen & cờ</strong>
+          <div class="muted-sm">Ảnh hoa sen và cờ dùng làm nền/điểm nhấn. Bạn có thể upload ảnh khác nếu muốn.</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <label class="upload">
+            <input type="file" accept="image/*" id="uploadLotus">
+            Thay nền
+          </label>
+          <label class="upload">
+            <input type="file" accept="image/*" id="uploadFlag">
+            Thay logo
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== TIỂU SỬ ===== -->
+  <section id="tieusu" class="panel content" aria-labelledby="tsTitle">
+    <h3 class="section-title"><span class="marker"></span><span id="tsTitle">Tiểu sử — Thân thế & Con đường hoạt động</span></h3>
+
+    <div class="grid-2">
+      <div>
+        <div class="card">
+          <h4 class="kicker">Thân thế</h4>
+          <p class="meta">Tên khai sinh: <strong>Nguyễn Sinh Cung</strong> — sau đổi Nguyễn Tất Thành, rồi Hồ Chí Minh.</p>
+          <p><strong>Ngày sinh:</strong> 19/5/1890 (theo dương lịch); <strong>Quê quán:</strong> Làng Sen, xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An.</p>
+          <p><strong>Gia đình:</strong> Cha: Nguyễn Sinh Sắc (nhà Nho, đỗ Phó bảng), mẹ: Hoàng Thị Loan (tần tảo, hi sinh). Gia đình ảnh hưởng sâu sắc tới tinh thần yêu nước và đạo đức của Người.</p>
+          <p class="muted-sm">(Nguồn: Hồ Chí Minh Toàn tập; Bảo tàng Hồ Chí Minh).</p>
+        </div>
+
+        <div class="card">
+          <h4 class="kicker">Con đường ra đi tìm đường cứu nước (1911)</h4>
+          <p><strong>5/6/1911:</strong> Rời bến Nhà Rồng (Sài Gòn) — bắt đầu hành trình tiếp xúc nhiều nền văn hóa, hiểu biết quốc tế, tìm đường cứu nước.</p>
+          <p><strong>1919:</strong> Gửi "Bản Yêu sách của nhân dân An Nam" tới Hội nghị Pháp – Versailles, thể hiện tinh thần kiên định đòi quyền lợi cho dân tộc.</p>
+        </div>
+
+        <div class="card">
+          <h4 class="kicker">Hoạt động quốc tế & tiếp thu chủ nghĩa Mác – Lênin</h4>
+          <p><strong>1920:</strong> Tham gia phong trào cộng sản quốc tế, nghiên cứu chủ nghĩa Mác – Lênin và quyết tâm chọn con đường giải phóng dân tộc gắn kết với giải phóng giai cấp.</p>
+          <p><strong>1925–1930:</strong> Hoạt động tại Pháp, Trung Quốc, Liên Xô — viết nhiều bài, tham gia tổ chức, truyền bá lý luận.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h4 class="kicker">Thành lập Đảng & lãnh đạo cách mạng</h4>
+          <p><strong>1930:</strong> Đồng sáng lập Đảng Cộng sản Việt Nam (thống nhất các tổ chức cộng sản). Người tham gia và chỉ đạo nhiều phong trào, xây dựng đường lối chiến lược cho cách mạng Việt Nam.</p>
+          <p><strong>1941:</strong> Trở về nước trực tiếp lãnh đạo, chuẩn bị lực lượng cho Cách mạng Tháng Tám.</p>
+          <p><strong>2/9/1945:</strong> Đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình — khai sinh nước Việt Nam Dân chủ Cộng hòa.</p>
+        </div>
+
+        <div class="card">
+          <h4 class="kicker">Giai đoạn kháng chiến & xây dựng (1945–1969)</h4>
+          <p>Trong suốt thời kỳ kháng chiến chống Pháp (1946–1954) và sau đó là xây dựng miền Bắc, Người chú trọng công tác tổ chức, giáo dục đạo đức, củng cố chính quyền cách mạng, đồng thời vận động ngoại giao, tranh thủ ủng hộ quốc tế.</p>
+          <p><strong>1965–1969:</strong> Người biên soạn và hoàn thiện nhiều văn bản cuối đời, đặc biệt là <em>Di chúc</em>, dặn dò Đảng, nhân dân.</p>
+        </div>
+
+        <div class="card">
+          <h4 class="kicker">Qua đời & Di sản</h4>
+          <p><strong>2/9/1969:</strong> Chủ tịch Hồ Chí Minh từ trần tại Hà Nội. Người để lại di sản: tư tưởng Hồ Chí Minh (độc lập dân tộc, chủ nghĩa xã hội, đạo đức cách mạng), nhiều tác phẩm và tấm gương đạo đức.</p>
+          <p class="muted-sm">Nguồn tham khảo: Hồ Chí Minh Toàn tập; Bảo tàng Hồ Chí Minh; Cổng thông tin Chính phủ.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- timeline miniature of life (optional) -->
+    <div class="card" style="margin-top:12px">
+      <h4 class="kicker">Mốc thời gian chính</h4>
+      <div class="timeline" aria-hidden="false">
+        <div class="tl-item">
+          <div class="tl-bubble"><img src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2023/07/anh-bac-ho-4.jpg.webp" alt=""></div>
+          <div class="tl-body">
+            <div class="tl-year">1890</div>
+            <div><strong>Sinh tại Kim Liên, Nghệ An.</strong></div>
+            <div class="muted-sm">Nguyễn Sinh Cung (sau là Nguyễn Tất Thành, Hồ Chí Minh).</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bubble"><img src="https://inkythuatso.com/uploads/thumbnails/800/2023/03/2-hinh-anh-bac-ho-tu-ben-nha-rong-ra-di-tim-duong-cuu-nuoc-inkythuatso-04-10-53-39.jpg" alt=""></div>
+          <div class="tl-body">
+            <div class="tl-year">1911</div>
+            <div><strong>Rời bến Nhà Rồng, bắt đầu hành trình tìm đường cứu nước.</strong></div>
+            <div class="muted-sm">Cuộc hành trình mở ra con đường hoạt động quốc tế và tiếp cận chủ nghĩa Mác-Lênin.</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bubble"><img src="https://file.qdnd.vn/data/images/0/2021/05/31/vuhuyen/2652020huyen13.jpg?dpi=150&quality=100&w=575" alt=""></div>
+          <div class="tl-body">
+            <div class="tl-year">1920–1930</div>
+            <div><strong>Hoạt động ở Pháp, Liên Xô, Quảng Châu; tiếp thu chủ nghĩa Mác-Lênin.</strong></div>
+            <div class="muted-sm">Tham gia phong trào cộng sản quốc tế.</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bubble"><img src="http://baobariavungtau.com.vn/dataimages/202008/original/images1629878_tuyen_ngon.jpg" alt=""></div>
+          <div class="tl-body">
+            <div class="tl-year">1945</div>
+            <div><strong>Đọc Tuyên ngôn Độc lập (2/9/1945) — Khai sinh nước Việt Nam Dân chủ Cộng hòa.</strong></div>
+            <div class="muted-sm">Sự kiện quyết định trong lịch sử dân tộc.</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bubble"><img src="https://cdn2.fptshop.com.vn/unsafe/800x0/30_4_lang_bac_co_mo_khong_1_3859675fd2.jpg" alt=""></div>
+          <div class="tl-body">
+            <div class="tl-year">1969</div>
+            <div><strong>Từ trần (2/9/1969), để lại Di chúc và tư tưởng lớn.</strong></div>
+            <div class="muted-sm">Di sản tinh thần và tư tưởng đến nay vẫn có ảnh hưởng sâu rộng.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TÁC PHẨM (detailed timeline) ===== -->
+  <section id="tacpham" class="panel content" aria-labelledby="tpTitle">
+    <h3 class="section-title"><span class="marker"></span><span id="tpTitle">Tác phẩm tiêu biểu — Timeline chi tiết</span></h3>
+
+    <div class="card">
+      <p class="muted-sm">Phần này gồm các tác phẩm tiêu biểu của Chủ tịch Hồ Chí Minh. Mỗi mục có: <strong>Hoàn cảnh — Nội dung — Trích dẫn — Ý nghĩa</strong>. (Nguồn: <em>Hồ Chí Minh Toàn tập</em>, Bảo tàng Hồ Chí Minh.)</p>
+    </div>
+
+    <!-- timeline detailed -->
+    <div class="card" style="overflow:auto">
+      <div class="timeline" role="list">
+        <!-- 1 -->
+        <div class="tl-item" role="listitem">
+          <div class="tl-bubble" title="1925"><img src="https://baotanglichsu.vn/DataFiles/2022/08/News/Tieng%20Viet/16.8.2022/Sach%20Ban%20an%20che%20do%20thuc%20dan%20phap%20luu%20giu%20tai%20BTLSQG/1.jpg" alt="1925"></div>
+          <div class="tl-body">
+            <div class="tl-year">1925 — <strong>Bản án chế độ thực dân Pháp</strong></div>
+            <p><strong>Hoàn cảnh:</strong> Nguyễn Ái Quốc (Hồ Chí Minh) viết tác phẩm này trong thời gian hoạt động tại Pháp, nhằm tố cáo tội ác của chủ nghĩa thực dân đối với các thuộc địa (xuất bản tại Paris, 1925).</p>
+            <p><strong>Nội dung chính:</strong> Phân tích sâu về sự bóc lột, đàn áp và chính sách ngu dân của thực dân; chỉ rõ về phương thức chiếm đoạt tài nguyên, bóc lột sức lao động và đàn áp chính trị. Tác phẩm là bản cáo trạng mang tính chất chính trị, nhằm thức tỉnh phong trào giải phóng dân tộc.</p>
+            <p class="quote">Trích: “Chủ nghĩa thực dân là một con đỉa có hai vòi: một vòi bám vào chính quốc, một vòi bám vào thuộc địa...”</p>
+            <p><strong>Ý nghĩa:</strong> Là tài liệu phản kháng có ảnh hưởng lớn, khích lệ phong trào đấu tranh đòi độc lập. Tác phẩm được dẫn chiếu trong nhiều tài liệu cách mạng quốc tế.</p>
+            <div class="muted-sm">Nguồn: Hồ Chí Minh Toàn tập (ghi chú về xuất bản năm 1925).</div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="tl-item">
+          <div class="tl-bubble" title="1927"><img src="https://cdn.discordapp.com/attachments/1422944869801791639/1422983306013835394/IMG_8552.jpg?ex=68dea7f9&is=68dd5679&hm=68fdef6a3f2f163fcd346626f134bfeccf678be2c75f162663b2336c40a922ea&" alt="Quảng Châu"></div>
+          <div class="tl-body">
+            <div class="tl-year">1927 — <strong>Đường Kách Mệnh</strong></div>
+            <p><strong>Hoàn cảnh:</strong> Tập hợp các bài giảng Nguyễn Ái Quốc giảng tại lớp huấn luyện chính trị ở Quảng Châu (giai đoạn 1925–1927), dành để đào tạo cán bộ cách mạng.</p>
+            <p><strong>Nội dung chính:</strong> Giới thiệu những kiến thức cơ bản của chủ nghĩa Mác-Lênin, phương pháp cách mạng, tinh thần tổ chức, vai trò của Đảng và kỷ luật cách mạng. Nhấn mạnh việc giáo dục chính trị và đào tạo đội ngũ lãnh đạo cách mạng.</p>
+            <p class="quote">Trích: “Trước hết phải có Đảng cách mệnh, để trong thì vận động và tổ chức dân chúng...”</p>
+            <p><strong>Ý nghĩa:</strong> Là tài liệu nền tảng cho hoạt động cách mạng, đào tạo cán bộ và truyền bá đường lối cách mạng ở Việt Nam.</p>
+            <div class="muted-sm">Nguồn: Đường Kách Mệnh (tài liệu huấn luyện, 1927).</div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="tl-item">
+          <div class="tl-bubble" title="1942–1943"><img src="https://bizweb.dktcdn.net/100/567/082/products/nhat-ky-trong-tu-14176-500-master.jpg?v=1747325389133" alt=""></div>
+          <div class="tl-body">
+            <div class="tl-year">1942–1943 — <strong>Nhật ký trong tù (Ngục trung nhật ký)</strong></div>
+            <p><strong>Hoàn cảnh:</strong> Sáng tác trong thời gian Hồ Chí Minh bị giam trong nhà tù Tưởng Giới Thạch (Trung Quốc). Ghi lại cảm xúc, suy nghĩ và quan sát trong thời gian bị giam cầm.</p>
+            <p><strong>Nội dung chính:</strong> Gồm hơn 130 bài thơ chữ Hán, phản ánh tình yêu thiên nhiên, niềm lạc quan, nghị lực và tinh thần kiên cường trong tù. Đồng thời thể hiện sự tinh tế nghệ thuật và chiều sâu nhân văn của Người.</p>
+            <p class="quote">Trích: “Thân thể ở trong lao, tinh thần ở ngoài lao.”</p>
+            <p><strong>Ý nghĩa:</strong> Giá trị văn học, tâm lý và tinh thần; là minh chứng cho nghị lực của một người chiến sĩ cách mạng giữa gian lao.</p>
+            <div class="muted-sm">Nguồn: Nhật ký trong tù — Hồ Chí Minh (bản chữ Hán, dịch).</div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="tl-item">
+          <div class="tl-bubble" title="1945"><img src="https://cdn.discordapp.com/attachments/1422944869801791639/1422983648168116394/IMG_8553.jpg?ex=68dea84b&is=68dd56cb&hm=a5235051370b8edf1f90c96f677827fe7f31a30d6df0fec64392e62f1fe3c2c9&" alt="Quảng trường Ba Đình"></div>
+          <div class="tl-body">
+            <div class="tl-year">2/9/1945 — <strong>Tuyên ngôn Độc lập</strong></div>
+            <p><strong>Hoàn cảnh:</strong> Đọc tại Quảng trường Ba Đình, Hà Nội, ngày 2/9/1945 — khẳng định sự ra đời của nước Việt Nam Dân chủ Cộng hòa sau Cách mạng Tháng Tám.</p>
+            <p><strong>Nội dung chính:</strong> Khẳng định quyền tự do, độc lập của dân tộc Việt Nam; trưng dẫn những lập luận pháp lý (tham chiếu vào Tuyên ngôn Độc lập của Hoa Kỳ và Nhân quyền Pháp) để chứng minh quyền tự quyết của dân tộc.</p>
+            <p class="quote">Trích: “Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do độc lập.”</p>
+            <p><strong>Ý nghĩa:</strong> Văn kiện lịch sử khai sinh nhà nước mới, mang tính biểu tượng quốc gia và pháp lý đối với quyền tự quyết dân tộc.</p>
+            <div class="muted-sm">Nguồn: Tuyên ngôn Độc lập (2/9/1945).</div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="tl-item">
+          <div class="tl-bubble" title="1946"><img src="https://bhd.1cdn.vn/2019/12/19/files-library-images-site-1-20191219-web-can-phong-don-so-noi-bac-viet-loi-keu-goi-toan-quoc-khang-chien-2-091603.jpg" alt="Kháng chiến"></div>
+          <div class="tl-body">
+            <div class="tl-year">19/12/1946 — <strong>Lời kêu gọi Toàn quốc kháng chiến</strong></div>
+            <p><strong>Hoàn cảnh:</strong> Khi thực dân Pháp trở lại xâm lược, Chính phủ khởi động cuộc kháng chiến toàn quốc năm 1946-1954.</p>
+            <p><strong>Nội dung chính:</strong> Kêu gọi toàn dân đứng lên bảo vệ độc lập, đánh giặc xâm lược; huy động sức mạnh nhân dân vào cuộc kháng chiến.</p>
+            <p class="quote">Trích: “Chúng ta thà hy sinh tất cả chứ nhất định không chịu mất nước, nhất định không chịu làm nô lệ.”</p>
+            <p><strong>Ý nghĩa:</strong> Khẳng định tinh thần bất khuất, quyết tâm bảo vệ nền độc lập vừa giành được.</p>
+            <div class="muted-sm">Nguồn: Lời kêu gọi Toàn quốc kháng chiến (19/12/1946).</div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="tl-item">
+          <div class="tl-bubble" title="1965–1969"><img src="https://cdn.discordapp.com/attachments/1422944869801791639/1422983967757307965/IMG_8554.jpg?ex=68dea897&is=68dd5717&hm=0844819150ac221e240e384ec078b00ce1e03cdc27826cc6b4a5e2d9d31ed40b&" alt="1968"></div>
+          <div class="tl-body">
+            <div class="tl-year">1965–1969 — <strong>Di chúc</strong></div>
+            <p><strong>Hoàn cảnh:</strong> Được viết, sửa đổi trong những năm cuối đời (1965–1969). Người để lại di chúc cho Đảng và nhân dân về việc xây dựng đất nước và bồi dưỡng thế hệ sau.</p>
+            <p><strong>Nội dung chính:</strong> Nhấn mạnh chỉnh đốn Đảng, xây dựng đạo đức cách mạng, chăm lo đời sống nhân dân, bồi dưỡng thế hệ trẻ “vừa hồng vừa chuyên”.</p>
+            <p class="quote">Trích: “Việc cần làm trước tiên là chỉnh đốn lại Đảng, làm cho mỗi đảng viên, mỗi đoàn viên thấm nhuần đạo đức cách mạng.”</p>
+            <p><strong>Ý nghĩa:</strong> Là lời căn dặn chiến lược, có giá trị cho công tác xây dựng Đảng và quản lý Nhà nước trong nhiều thập niên sau.</p>
+            <div class="muted-sm">Nguồn: Di chúc (1965–1969), Hồ Chí Minh Toàn tập.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- other works list -->
+      <div style="margin-top:14px">
+        <h4 class="kicker">Một số tác phẩm & văn kiện khác (tham khảo)</h4>
+        <ul class="muted-sm">
+          <li><strong>Bản án chế độ thực dân Pháp</strong> (1925) — (đã nêu)</li>
+          <li><strong>Sửa đổi lối làm việc</strong> (1947)</li>
+          <li><strong>Đạo đức cách mạng</strong> (1958)</li>
+          <li><strong>Nâng cao đạo đức cách mạng, quét sạch chủ nghĩa cá nhân</strong> (1969)</li>
+          <li>Thư gửi thanh niên, phụ nữ, nông dân, công nhân; bài báo trên các báo như <em>Việt Nam Độc lập</em>, <em>Cứu quốc</em></li>
+        </ul>
+        <div class="muted-sm">Ghi chú: Danh sách có thể mở rộng — tham khảo <em>Hồ Chí Minh Toàn tập</em> để xem nguyên bản các văn kiện, bài báo.</div>
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- ===== CÂU NÓI & THÔNG ĐIỆP ===== -->
+  <section id="caunoi" class="panel content" aria-labelledby="cnTitle">
+    <h3 class="section-title"><span class="marker"></span><span id="cnTitle">Câu nói bất hủ & Thông điệp</span></h3>
+
+    <div class="card">
+      <p class="muted-sm">Tập hợp các câu nói được ghi chép, trích dẫn trong văn bản, bài nói và tư liệu lịch sử.</p>
+    </div>
+
+    <!-- Quotes grouped -->
+    <div style="margin-top:12px" class="quotes-grid">
+      <!-- Group 1: Độc lập -->
+      <div class="quote-card">
+        <p>“Không có gì quý hơn độc lập, tự do.”</p>
+        <div class="src muted-sm">Nguồn: Phát biểu (1966); được trích dẫn phổ biến trong tài liệu về Chủ tịch Hồ Chí Minh.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Nước độc lập mà dân không hưởng hạnh phúc, tự do thì độc lập cũng chẳng có nghĩa lý gì.”</p>
+        <div class="src muted-sm">Nguồn: Văn bản, phát biểu trong các năm 1940s–1960s.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Chúng ta thà hy sinh tất cả chứ nhất định không chịu mất nước, nhất định không chịu làm nô lệ.”</p>
+        <div class="src muted-sm">Nguồn: Lời kêu gọi Toàn quốc kháng chiến (19/12/1946).</div>
+      </div>
+
+      <!-- Group 2: Nhân dân -->
+      <div class="quote-card">
+        <p>“Dễ trăm lần không dân cũng chịu, khó vạn lần dân liệu cũng xong.”</p>
+        <div class="src muted-sm">Nguồn: Phát biểu & văn bản cách mạng.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Trong bầu trời không gì quý bằng nhân dân.”</p>
+        <div class="src muted-sm">Nguồn: Nhiều bài nói và văn bản.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Việc gì lợi cho dân phải hết sức làm, việc gì hại đến dân phải hết sức tránh.”</p>
+        <div class="src muted-sm">Nguồn: Văn bản, tác phẩm.</div>
+      </div>
+
+      <!-- Group 3: Đạo đức -->
+      <div class="quote-card">
+        <p>“Cần, kiệm, liêm, chính, chí công vô tư.”</p>
+        <div class="src muted-sm">Nguồn: Nhiều bài nói, văn bản đạo đức cách mạng.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Một tấm gương sống còn có giá trị hơn một trăm bài diễn văn.”</p>
+        <div class="src muted-sm">Nguồn: Văn phong Hồ Chí Minh; phát ngôn truyền cảm hứng.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Muốn hướng dẫn nhân dân, mình phải làm mực thước cho người ta bắt chước.”</p>
+        <div class="src muted-sm">Nguồn: Lời căn dặn trong công tác cán bộ.</div>
+      </div>
+
+      <!-- Group 4: Thanh niên -->
+      <div class="quote-card">
+        <p>“Non sông Việt Nam có trở nên vẻ vang hay không, ... chính là nhờ phần lớn ở công học tập của các cháu.”</p>
+        <div class="src muted-sm">Nguồn: Lời kêu gọi, thư gửi thanh niên.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Bồi dưỡng thế hệ cách mạng cho đời sau là một việc rất quan trọng và rất cần thiết.”</p>
+        <div class="src muted-sm">Nguồn: Di chúc và nhiều bài viết.</div>
+      </div>
+
+      <!-- Group 5: Hòa bình & nhân ái -->
+      <div class="quote-card">
+        <p>“Tôi chỉ có một ham muốn, ham muốn tột bậc, là làm sao cho nước ta được hoàn toàn độc lập, dân ta được hoàn toàn tự do, ai cũng có cơm ăn áo mặc, ai cũng được học hành.”</p>
+        <div class="src muted-sm">Nguồn: Bài viết và phát biểu.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Yêu Tổ quốc, yêu đồng bào.”</p>
+        <div class="src muted-sm">Nguồn: Những lời kêu gọi và bài viết.</div>
+      </div>
+
+      <!-- Group 6: Học tập & lao động -->
+      <div class="quote-card">
+        <p>“Học hỏi là một việc phải tiếp tục suốt đời.”</p>
+        <div class="src muted-sm">Nguồn: Các bài viết khuyến khích học tập.</div>
+      </div>
+
+      <div class="quote-card">
+        <p>“Thi đua là yêu nước.”</p>
+        <div class="src muted-sm">Nguồn: Lời kêu gọi thi đua trong nhiều bài phát biểu.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== BÀI HỌC (expanded) ===== -->
+  <section id="baihoc" class="panel content" aria-labelledby="bhTitle">
+    <h3 class="section-title"><span class="marker"></span><span id="bhTitle">Bài học người để lại — Cụ thể và chi tiết</span></h3>
+
+    <div class="card">
+      <p class="lesson-item-sm">Dưới đây là các bài học được rút ra từ tư tưởng, phong cách, đạo đức và hoạt động của Chủ tịch Hồ Chí Minh — mỗi bài học kèm giải thích ngắn, dễ hiểu để trưng bày trên website hoặc dùng cho bài giảng.</p>
+    </div>
+
+    <div class="lessons">
+      <div class="lesson-item">
+        <h4>1. Yêu nước gắn với hành động cụ thể</h4>
+        <p>Yêu nước không chỉ là tình cảm mà phải cụ thể bằng việc học tập, làm việc, đóng góp cho cộng đồng, thậm chí hy sinh vì lợi ích quốc gia. Người đi tìm đường cứu nước, không chỉ nói suông.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>2. Lấy dân làm gốc</h4>
+        <p>Mọi chính sách, chủ trương phải xuất phát từ lợi ích của nhân dân; vận động và dựa vào quần chúng để thực hiện mục tiêu lớn.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>3. Đoàn kết toàn dân</h4>
+        <p>Đại đoàn kết mọi tầng lớp, tôn giáo, vùng miền là nguồn lực mạnh mẽ để xây dựng và bảo vệ Tổ quốc.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>4. Đạo đức là gốc</h4>
+        <p>Người nhấn mạnh: người cách mạng phải có đạo đức; đạo đức là nền tảng để sử dụng tài năng một cách trong sáng và có trách nhiệm.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>5. Một tấm gương sống có giá trị hơn nhiều lời nói</h4>
+        <p>Hành động gương mẫu của người lãnh đạo làm thuyết phục nhân dân hơn mọi lời tuyên truyền.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>6. Phong cách giản dị, gần gũi</h4>
+        <p>Sống giản dị, gần dân, tránh hình thức, phô trương — tạo niềm tin và uy tín thực tế.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>7. Tinh thần tự học và rèn luyện</h4>
+        <p>Không ngừng học hỏi, nghiên cứu và bồi dưỡng bản thân là chìa khóa để hoàn thiện và lãnh đạo hiệu quả.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>8. Quyết tâm, kiên trì trong khó khăn</h4>
+        <p>Trước thử thách, Người luôn giữ vững niềm tin và tìm cách vượt khó — bài học về lòng bền bỉ, kiên trì.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>9. Kết hợp dân tộc với quốc tế</h4>
+        <p>Vận dụng tinh hoa nhân loại, hợp tác với bạn bè quốc tế, nhưng luôn giữ bản sắc dân tộc.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>10. Bồi dưỡng thế hệ trẻ</h4>
+        <p>Chú trọng giáo dục thế hệ trẻ về đạo đức, tri thức, kỹ năng để "vừa hồng vừa chuyên".</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>11. Giữ Đảng và chính quyền trong sạch</h4>
+        <p>Chống quan liêu, tham nhũng, chủ nghĩa cá nhân; xây dựng tổ chức trong sạch, vững mạnh.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>12. Đặt lợi ích cộng đồng lên trên lợi ích cá nhân</h4>
+        <p>Công việc chung phải được ưu tiên; người lãnh đạo cần đặt trách nhiệm với dân lên trước lợi ích riêng.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>13. Trách nhiệm đối với lịch sử và tương lai</h4>
+        <p>Lời dặn dò từ Di chúc thể hiện trách nhiệm với các thế hệ tương lai — bảo vệ nền độc lập, xây dựng xã hội tốt đẹp hơn.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>14. Lòng nhân ái và tôn trọng con người</h4>
+        <p>Yêu thương, tôn trọng mọi tầng lớp; không phân biệt đối xử; coi trọng công bằng xã hội.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===== GALLERY & TÀI LIỆU ===== -->
+  <section id="thu-vien" class="panel content" aria-labelledby="tvTitle">
+    <h3 class="section-title"><span class="marker"></span><span id="tvTitle">Thư viện ảnh & Nguồn tư liệu</span></h3>
+
+    <div class="card">
+      <p class="muted-sm">Hình ảnh dưới đây lấy từ nguồn công cộng (Wikimedia Commons) và một số ảnh minh họa. Mỗi ảnh có chú thích nguồn. Bạn có thể upload ảnh gốc (tư liệu của Bảo tàng) để thay thế.</p>
+    </div>
+
+    <div class="gallery" style="margin-top:12px">
+      <figure>
+        <img src="https://vi.wikipedia.org/wiki/T%E1%BA%ADp_tin:Ho_Chi_Minh_-_1946_Portrait.jpg" alt="Chân dung Hồ Chí Minh 1946">
+        <figcaption>Chân dung Bác Hồ (1946). Nguồn: Wikimedia Commons (Public Domain).</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.pexels.com/photos/1171581/pexels-photo-1171581.jpg" alt="Hoa sen">
+        <figcaption>Hoa sen — biểu tượng văn hóa Việt Nam. Nguồn ảnh minh họa: Wikimedia Commons.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.pexels.com/photos/33997334/pexels-photo-33997334.jpg" alt="Quốc kỳ Việt Nam">
+        <figcaption>Quốc kỳ Việt Nam. Nguồn: Wikimedia Commons.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://tulieuvankien.dangcongsan.vn/Uploads/2018/8/5/13/55.2%20HCM.jpg" alt="Hồ Chí Minh thư giãn">
+        <figcaption>Hồ Chí Minh — ảnh tư liệu. Nguồn: Wikimedia Commons.</figcaption>
+      </figure>
+    </div>
+
+    <div style="margin-top:12px" class="card">
+      <strong>Ghi chú về hình ảnh:</strong>
+      <ul class="muted-sm">
+        <li>Nếu bạn có ảnh gốc (bảo tàng, thư viện), hãy dùng nút <em>Upload</em> trên Trang chủ hoặc thay đường dẫn ảnh trực tiếp trong mã.</li>
+        <li>Mọi ảnh Wikimedia Commons đều có trang chi tiết — vui lòng kiểm tra giấy phép khi dùng cho mục đích thương mại.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+
+  <!-- ===== BÀI HỌC (expanded) ===== -->
+  <section id="baihoc" class="panel content" aria-labelledby="bhTitle">
+    <h3 class="section-title"><span class="marker"></span><span id="bhTitle">Bài học người để lại — Cụ thể và chi tiết</span></h3>
+
+    <div class="card">
+      <p class="muted-sm">Dưới đây là các bài học được rút ra từ tư tưởng, phong cách, đạo đức và hoạt động của Chủ tịch Hồ Chí Minh — mỗi bài học kèm giải thích ngắn.</p>
+    </div>
+
+    <div class="lessons">
+      <div class="lesson-item">
+        <h4>1. Yêu nước gắn với hành động cụ thể</h4>
+        <p>Yêu nước không chỉ là tình cảm mà phải cụ thể bằng việc học tập, làm việc, đóng góp cho cộng đồng, thậm chí hy sinh vì lợi ích quốc gia. Người đi tìm đường cứu nước, không chỉ nói suông.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>2. Lấy dân làm gốc</h4>
+        <p>Mọi chính sách, chủ trương phải xuất phát từ lợi ích của nhân dân; vận động và dựa vào quần chúng để thực hiện mục tiêu lớn.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>3. Đoàn kết toàn dân</h4>
+        <p>Đại đoàn kết mọi tầng lớp, tôn giáo, vùng miền là nguồn lực mạnh mẽ để xây dựng và bảo vệ Tổ quốc.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>4. Đạo đức là gốc</h4>
+        <p>Người nhấn mạnh: người cách mạng phải có đạo đức; đạo đức là nền tảng để sử dụng tài năng một cách trong sáng và có trách nhiệm.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>5. Một tấm gương sống có giá trị hơn nhiều lời nói</h4>
+        <p>Hành động gương mẫu của người lãnh đạo làm thuyết phục nhân dân hơn mọi lời tuyên truyền.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>6. Phong cách giản dị, gần gũi</h4>
+        <p>Sống giản dị, gần dân, tránh hình thức, phô trương — tạo niềm tin và uy tín thực tế.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>7. Tinh thần tự học và rèn luyện</h4>
+        <p>Không ngừng học hỏi, nghiên cứu và bồi dưỡng bản thân là chìa khóa để hoàn thiện và lãnh đạo hiệu quả.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>8. Quyết tâm, kiên trì trong khó khăn</h4>
+        <p>Trước thử thách, Người luôn giữ vững niềm tin và tìm cách vượt khó — bài học về lòng bền bỉ, kiên trì.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>9. Kết hợp dân tộc với quốc tế</h4>
+        <p>Vận dụng tinh hoa nhân loại, hợp tác với bạn bè quốc tế, nhưng luôn giữ bản sắc dân tộc.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>10. Bồi dưỡng thế hệ trẻ</h4>
+        <p>Chú trọng giáo dục thế hệ trẻ về đạo đức, tri thức, kỹ năng để "vừa hồng vừa chuyên".</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>11. Giữ Đảng và chính quyền trong sạch</h4>
+        <p>Chống quan liêu, tham nhũng, chủ nghĩa cá nhân; xây dựng tổ chức trong sạch, vững mạnh.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>12. Đặt lợi ích cộng đồng lên trên lợi ích cá nhân</h4>
+        <p>Công việc chung phải được ưu tiên; người lãnh đạo cần đặt trách nhiệm với dân lên trước lợi ích riêng.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>13. Trách nhiệm đối với lịch sử và tương lai</h4>
+        <p>Lời dặn dò từ Di chúc thể hiện trách nhiệm với các thế hệ tương lai — bảo vệ nền độc lập, xây dựng xã hội tốt đẹp hơn.</p>
+      </div>
+
+      <div class="lesson-item">
+        <h4>14. Lòng nhân ái và tôn trọng con người</h4>
+        <p>Yêu thương, tôn trọng mọi tầng lớp; không phân biệt đối xử; coi trọng công bằng xã hội.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===== GALLERY & TÀI LIỆU ===== -->
+  <section id="thu-vien" class="panel content" aria-labelledby="tvTitle">
+    <h3 class="section-title"><span class="marker"></span><span id="tvTitle">Thư viện ảnh & Nguồn tư liệu</span></h3>
+
+    <div class="card">
+      <p class="muted-sm">Hình ảnh dưới đây lấy từ nguồn công cộng (Wikimedia Commons) và một số ảnh minh họa. Mỗi ảnh có chú thích nguồn. Bạn có thể upload ảnh gốc (tư liệu của Bảo tàng) để thay thế.</p>
+    </div>
+
+    <div class="gallery" style="margin-top:12px">
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Ho_Chi_Minh_1946_portrait.jpg" alt="Chân dung Hồ Chí Minh 1946">
+        <figcaption>Chân dung Bác Hồ (1946). Nguồn: Wikimedia Commons (Public Domain).</figcaption>
+      </figure>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Lotus_flower.jpg" alt="Hoa sen">
+        <figcaption>Hoa sen — biểu tượng văn hóa Việt Nam. Nguồn ảnh minh họa: Wikimedia Commons.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Vietnam.svg" alt="Quốc kỳ Việt Nam">
+        <figcaption>Quốc kỳ Việt Nam. Nguồn: Wikimedia Commons.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Ho_Chi_Minh_relax.jpg" alt="Hồ Chí Minh thư giãn">
+        <figcaption>Hồ Chí Minh — ảnh tư liệu. Nguồn: Wikimedia Commons.</figcaption>
+      </figure>
+    </div>
+
+    <div style="margin-top:12px" class="card">
+      <strong>Ghi chú về hình ảnh:</strong>
+      <ul class="muted-sm">
+        <li>Nếu bạn có ảnh gốc (bảo tàng, thư viện), hãy dùng nút <em>Upload</em> trên Trang chủ hoặc thay đường dẫn ảnh trực tiếp trong mã.</li>
+        <li>Mọi ảnh Wikimedia Commons đều có trang chi tiết — vui lòng kiểm tra giấy phép khi dùng cho mục đích thương mại.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-grid">
+    <div>
+      <div style="margin-bottom:8px"><strong>Thực hiện / Thành viên</strong></div>
+      <div class="member-input">
+        <figcaption>Lớp 12A10</figcaption>
+       <ul style="margin:0 0 8px 18px;padding:0">
+        <li>Nguyễn Ngọc Bình An.</li>
+        <li>Vũ Quỳnh Mai.</li>
+        <li>Mai Như Ý.</li>
+        <li>Trần Huyền Diệu.</li>
+      </ul>
+    </div>
+ </div>
+
+    <div>
+      <div style="margin-bottom:8px"><strong>Nguồn & Tài liệu tham khảo</strong></div>
+      <div class="sources">
+        <ul style="margin:0 0 8px 18px;padding:0">
+          <li>Hồ Chí Minh Toàn tập — NXB Chính trị Quốc gia Sự thật.</li>
+          <li>Bảo tàng Hồ Chí Minh — Tư liệu và ảnh (Wikimedia Commons trích xuất từ tư liệu công cộng).</li>
+          <li>Cổng Thông tin Chính phủ, Thư viện Quốc gia Việt Nam.</li>
+        </ul>
+        <div class="muted-sm">Nếu cần trích dẫn cụ thể từng câu, mình có thể chèn link trực tiếp đến bản gốc trong Hồ Chí Minh Toàn tập.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Scripts ===== -->
+<script>
+  // ---------- Tab navigation ----------
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = btn.getAttribute('data-target');
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+      const panel = document.getElementById(target);
+      if(panel) panel.classList.add('active');
+      // scroll top of main area smoothly
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+
+  // hero action shortcut buttons
+  document.querySelectorAll('.hero-card .btn').forEach(b=>{
+    b.addEventListener('click', e=>{
+      const t = b.getAttribute('data-target');
+      if(!t) return;
+      document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
+      document.querySelector('.tab-btn[data-target="'+t+'"]').classList.add('active');
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById(t).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+
+  // ---------- Portrait upload & reset ----------
+  const uploadPortrait = document.getElementById('uploadPortrait');
+  const portraitImg = document.getElementById('portraitImg');
+  const resetPortrait = document.getElementById('resetPortrait');
+  const defaultPortrait = portraitImg.src;
+
+  uploadPortrait.addEventListener('change', e=>{
+    const f = e.target.files[0];
+    if(!f) return;
+    const url = URL.createObjectURL(f);
+    portraitImg.src = url;
+  });
+  resetPortrait.addEventListener('click', ()=>{
+    portraitImg.src = defaultPortrait;
+  });
+
+  // upload lotus & flag - set as background of hero (simple)
+  const uploadLotus = document.getElementById('uploadLotus');
+  const uploadFlag = document.getElementById('uploadFlag');
+  uploadLotus && uploadLotus.addEventListener('change', e=>{
+    const f = e.target.files[0];
+    if(!f) return;
+    const url = URL.createObjectURL(f);
+    document.querySelector('.hero').style.background = `url('${url}') center/cover no-repeat`;
+  });
+  uploadFlag && uploadFlag.addEventListener('change', e=>{
+    const f = e.target.files[0];
+    if(!f) return;
+    const url = URL.createObjectURL(f);
+    // set small flag left of brand
+    const brandImg = document.getElementById('brandPortrait');
+    brandImg.src = url;
+  });
+
+  // ---------- Save member info locally (sessionStorage) ----------
+  document.getElementById('saveMember').addEventListener('click', ()=>{
+    const name = document.getElementById('memberName').value.trim();
+    const group = document.getElementById('memberGroup').value.trim();
+    const note = document.getElementById('memberNote').value.trim();
+    const data = {name,group,note,ts:new Date().toISOString()};
+    sessionStorage.setItem('site_member', JSON.stringify(data));
+    document.getElementById('memberSaved').style.display='block';
+    setTimeout(()=>document.getElementById('memberSaved').style.display='none',2000);
+  });
+  // load if exists
+  const saved = sessionStorage.getItem('site_member');
+  if(saved){
+    try{
+      const obj = JSON.parse(saved);
+      document.getElementById('memberName').value = obj.name||'';
+      document.getElementById('memberGroup').value = obj.group||'';
+      document.getElementById('memberNote').value = obj.note||'';
+    }catch(e){}
+  }
+
+  // ---------- Accessibility: keyboard tab switching ----------
+  document.addEventListener('keydown', e=>{
+    if(e.altKey && e.key==='1') document.querySelector('.tab-btn[data-target="home"]').click();
+    if(e.altKey && e.key==='2') document.querySelector('.tab-btn[data-target="tieusu"]').click();
+    if(e.altKey && e.key==='3') document.querySelector('.tab-btn[data-target="tacpham"]').click();
+    if(e.altKey && e.key==='4') document.querySelector('.tab-btn[data-target="caunoi"]').click();
+    if(e.altKey && e.key==='5') document.querySelector('.tab-btn[data-target="baihoc"]').click();
+  });
+
+  // ---------- Tiny performance: lazy load images in timeline/gallery  ----------
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach(img=>{
+      if(!img.getAttribute('loading')) img.setAttribute('loading','lazy');
+    });
+  });
+</script>
+
+</body>
+</html>
+
